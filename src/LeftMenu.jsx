@@ -1,11 +1,12 @@
+import { useState } from 'react'
 import './LeftMenu.scss'
 
 export default function LeftMenu() {
-
+const [open, setOpen] = useState(true)
     return (
-        <nav className="left-menu">
-              <div className="left-menu__visibility-toggle">&lt;</div>
-      
+        <nav className={'left-menu'+(!open?' left-menu--hidden': '')}>
+              <div className="left-menu__visibility-toggle" onClick={()=> setOpen(!open)}>&lt;</div>
+              
               <div className="left-menu__content">
       
                   <div className="left-menu__header">
